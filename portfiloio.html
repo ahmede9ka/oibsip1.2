@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"
+  />
+    <title>Portfolio</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About me</a></li>
+          <li><a href="#skills">skills</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+       
+    </nav>
+   
+    <header>
+      <div class="text">
+        <h1>Ahmed Kallel</h1>
+        <div class="text-effect" id="textEffect">
+            <p>im a passionate </p>
+              <span class="text-top"> web developper</span>  
+              <span class="text-bottom"> software engineer</span> 
+             
+        </div>
+        <div class="button-container">
+          <button class="button">cv</button>
+          <button class="button">hire me</button>
+      </div>
+      </div>
+    </header>
+
+    <script>
+    const textElement = document.getElementById("textEffect");
+    const textTop = textElement.querySelector(".text-top");
+    const textBottom = textElement.querySelector(".text-bottom");
+    const texts = ["web developer", "software engineer"];
+    let currentTextIndex = 0;
+    
+    function toggleText() {
+      const newTextIndex = (currentTextIndex + 1) % texts.length;
+    
+      textTop.style.transform = "rotateX(-90deg)";
+      textBottom.style.transform = "rotateX(0)";
+    
+      setTimeout(() => {
+        textTop.textContent = texts[newTextIndex];
+        textTop.style.color = newTextIndex === 0 ? "#e74c3c" : "#3498db";
+        
+        textTop.style.transform = "rotateX(0)";
+        textBottom.style.transform = "rotateX(90deg)";
+      }, 250);
+    
+      currentTextIndex = newTextIndex;
+    }
+    
+    setInterval(toggleText, 1500);
+  </script>
+  <section class="about" id="about">
+        <h2>About Me</h2>
+        <p>"I am currently pursuing a Bachelor of Engineering in Software Engineering at the Faculty of Science in Tunis. A passionate enthusiast of computer science and mathematics, I'm committed to continuous skill development and a thriving career in the field. With a penchant for problem-solving and a dedication to staying at the forefront of technology, I'm excited to contribute innovative solutions that make a positive impact.</p>
+  </section>
+  <section id="skills" class="skills-section">
+      <h2>Skills</h2>
+      <section class="photo-section">
+        <div class="photo-container">
+          <div class="photo" style="background-image: url('1200px-C_Programming_Language.svg.png');"></div>
+          <div class="photo" style="background-image: url('5848152fcef1014c0b5e4967.png');"></div>
+          <div class="photo" style="background-image: url('186131673-9ffff84c-21b4-421b-b956-643aa0fa7dbd.png');"></div>
+          <div class="photo" style="background-image: url('732212.png');"></div>
+          <div class="photo" style="background-image: url('CSS3_logo.svg.png');"></div>
+          <div class="photo" style="background-image: url('JavaScript-logo.png');"></div>
+         
+        </div>
+      </section>
+      <h2>***</h2>
+  </section>
+
+  <section class="contact" id="contact">
+      <section class="contact-section">
+        <h2>Contact Me</h2>
+        <form action="#" method="post">
+            <div class="input-container">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-container">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-container">
+                <label for="request">Request:</label>
+                <textarea id="request" name="request" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit</button>
+            
+            <div class="social-icons">
+              <p>contact me</p>
+              <a href="#" class="social-icon"> <i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon">  <i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon">  <i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon">  <i class="fab fa-linkedin"></i></a>
+          </div>
+        </form>
+    </section>
+  </section>
+    
+  <footer>
+        <p>&copy; All rights reserved.</p>
+  </footer>
+</body>
+</html>
